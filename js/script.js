@@ -7,19 +7,10 @@
 "use strict"
 
 /**
- * Check servie worker.
- */
-if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2OR-Unit-6-04/sw.js", {
-    scope: "/ICS2OR-Unit-6-04/",
-  })
-}
-
-/**
- * This function displays an alert.
+ * This function does volume of a sphere
  */
 window.onload = function () {
-  // this calculates volume of a pyramid
+  // this calculates volume of a sphere
 
   const params = new URLSearchParams(document.location.search)
 
