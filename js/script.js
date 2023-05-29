@@ -7,24 +7,23 @@
 "use strict"
 
 /**
- * This function converts Fahrenheit to Celsius
+ * This function does volume of a sphere
  */
 window.onload = function () {
-  // Get the Fahrenheit value from the query string
+  // this calculates volume of a sphere
+
   const params = new URLSearchParams(document.location.search)
-  const fahrenheit = parseFloat(params.get("fahrenheit"))
 
-  // Input validation
-  if (isNaN(fahrenheit)) {
-    document.getElementById("output").innerHTML = "Invalid Fahrenheit value"
-    return
-  }
+  // input
+  const radius = params.get("r")
+  console.log(radius)
 
-  // Convert Fahrenheit to Celsius
-  const celsius = (fahrenheit - 32) * (5 / 9)
-  const roundedCelsius = celsius.toFixed(2)
+  // process
+  const volume = (4 / 3) * Math.PI * radius ** 3
+  const roundedVolume = volume.toFixed(2)
 
-  // Output
-  document.getElementById("dimension").innerHTML = "Fahrenheit = " + fahrenheit
-  document.getElementById("output").innerHTML = "Converted to Celsius: " + roundedCelsius + " °C"
+  // output
+  document.getElementById("dimension").innerHTML = "r = " + radius
+  document.getElementById("output").innerHTML =
+    "Volume: " + roundedVolume + " cm³"
 }
